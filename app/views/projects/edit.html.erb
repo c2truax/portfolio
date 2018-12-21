@@ -1,0 +1,41 @@
+<div class="container">
+<h1>Edit Project</h1>
+    <form action="/projects/<%= @proj.id %>" method='post'>
+    <input type="hidden" name="_method" value="patch">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" class="form-control" id="exampleInputTitle" value="<%= @proj.title %>" name="project[title]">
+        </div>
+        <div class="form-group">
+            <label for="title">Bio:</label>
+            <input type="text" class="form-control" id="exampleInputTitle" value="<%= @proj.bio %>" name="project[bio]">
+        </div>
+        <div class="form-group">
+            <label for="title">GitHub Link:</label>
+            <input type="text" class="form-control" id="exampleInputTitle" value="<%= @proj.github_url %>" name="project[github_url]">
+        </div>
+        <div class="form-group">
+            <label for="title">Project URL:</label>
+            <input type="text" class="form-control" id="exampleInputTitle" value="<%= @proj.project_url %>" name="project[project_url]">
+        </div>
+        <div class="form-group">
+            <label for="title">Image File Name:</label>
+            <input type="text" class="form-control" id="exampleInputTitle" value="<%= @proj.image_url %>" name="project[image_url]">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Description:</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" value="<%= @proj.description %>" rows="3" name="project[description]"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlSelect2">Tech Utilized:</label>
+            <%= select("project", "tech_id", options_for_select(@teches.collect {|u| [u.name, u.id]}, selected: @utilized.collect {|u| u.id}), {:include_blank => false}, { :multiple => true }) %>
+        </div>
+        <button type="submit" class="btn btn-success">Edit</button>
+    </form>
+    <form action="/projects/<%= @proj.id %>" method='post'>
+        <input type="hidden" name="_method" value="delete">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+</div>

@@ -1,0 +1,27 @@
+<div class="container">
+    <a href="teches/new" class="btn btn-success ml-2">New Tech</a>
+    <h6 class="bg-info text-light m-2 p-2">Languages</h6>
+    <div class="row ml-2">
+        <% @techlanguages.each do |tech| %>
+        <a href="/teches/<%= tech.id %>/edit" class=""><p><%= image_tag tech.image_url, title: tech.name, class: "img-fluid m-1", width: "40px" %></p></a>
+        <% end %>
+    </div>
+    <h6 class="bg-info text-light m-2 p-2">Framworks</h6>
+    <div class="row ml-2">
+        <% @techframeworks.each do |tech| %>
+        <a href="/teches/<%= tech.id %>/edit" class=""><p><%= image_tag tech.image_url, title: tech.name, class: "img-fluid m-1", width: "40px" %></p></a>
+        <% end %>
+    </div>
+    <h6 class="bg-info text-light m-2 p-2">Databases</h6>
+    <div class="row ml-2">
+        <% @techdatabases.each do |tech| %>
+        <a href="/teches/<%= tech.id %>/edit" class=""><p><%= image_tag tech.image_url, title: tech.name, class: "img-fluid m-1", width: "40px" %></p></a>
+        <% end %>
+    </div>
+    <h6 class="bg-info text-light m-2 p-2">Others</h6>
+    <div class="row ml-2">
+        <% @techothers.each do |tech| %>
+        <a href="/teches/<%= tech.id %>/edit" class=""><p><%= image_tag tech.image_url, title: tech.name, class: "img-fluid m-1", width: "40px" %></p></a>
+        <% end %>
+    </div>
+</div>

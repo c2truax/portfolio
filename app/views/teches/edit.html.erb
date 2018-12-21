@@ -1,0 +1,25 @@
+<div class="container">
+<h1>Edit tech</h1>
+    <form action="/teches/<%= @tech.id %>" method='post'>
+    <input type="hidden" name="_method" value="patch">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <div class="form-group">
+            <label for="name">name:</label>
+            <input type="text" class="form-control" id="exampleInputname" value="<%= @tech.name %>" name="tech[name]">
+        </div>
+        <div class="form-group">
+            <label for="name">kind (language, framework, database, or other):</label>
+            <input type="text" class="form-control" id="exampleInputname" value="<%= @tech.kind %>" name="tech[kind]">
+        </div>
+        <div class="form-group">
+            <label for="name">Image File Name:</label>
+            <input type="text" class="form-control" id="exampleInputname" value="<%= @tech.image_url %>" name="tech[image_url]">
+        </div>
+        <button type="submit" class="btn btn-success">Edit</button>
+    </form>
+    <form action="/teches/<%= @tech.id %>" method='post'>
+        <input type="hidden" name="_method" value="delete">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+</div>

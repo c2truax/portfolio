@@ -1,0 +1,35 @@
+<div class="container">
+<h1>New Project</h1>
+    <form action='/projects/' method='post'>
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" class="form-control" id="exampleInputTitle" name="project[title]">
+        </div>
+        <div class="form-group">
+            <label for="title">Bio:</label>
+            <input type="text" class="form-control" id="exampleInputTitle" name="project[bio]">
+        </div>
+        <div class="form-group">
+            <label for="title">GitHub Link:</label>
+            <input type="text" class="form-control" id="exampleInputTitle" name="project[github_url]">
+        </div>
+        <div class="form-group">
+            <label for="title">Project URL:</label>
+            <input type="text" class="form-control" id="exampleInputTitle" name="project[project_url]">
+        </div>
+        <div class="form-group">
+            <label for="title">Image File Name:</label>
+            <input type="text" class="form-control" id="exampleInputTitle" name="project[image_url]">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Description:</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="project[description]"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlSelect2">Tech Utilized:</label>
+            <%= select("project", "tech_id", @teches.collect {|u| [u.name, u.id]}, {:include_blank => false}, { :multiple => true }) %>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
