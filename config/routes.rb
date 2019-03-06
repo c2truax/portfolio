@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'coffee/index'
+
   get 'teches/new'
 
   get 'teches/edit'
